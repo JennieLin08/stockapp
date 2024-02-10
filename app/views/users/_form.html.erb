@@ -1,0 +1,61 @@
+<div class="m-4 row text-center d-flex justify-content-center " >
+
+  <div style="border:1px solid #56261a;border-radius:20px;width:500px;">
+  <h1><%= action_name == 'edit' ? 'Edit User' : 'Register' %></h1>
+
+<%= form_with(model: user) do |form| %>
+  <% if user.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row text-center d-flex justify-content-center" >
+    <div>
+      <%= form.label :full_name, style: "display: block" %>
+      <%= form.text_field :full_name , :style=>"border:1px solid #56261a;border-radius:20px;"%>
+    </div>
+    <div>
+      <%= form.label :username, style: "display: block" %>
+      <%= form.text_field :username , :style=>"border:1px solid #56261a;border-radius:20px;"%>
+    </div>
+
+    <div>
+      <%= form.label :email_address, style: "display: block" %>
+      <%= form.text_field :email_address, :style=>"border:1px solid #56261a;border-radius:20px;" %>
+    </div>
+
+      <div>
+        <%= form.label :password, style: "display: block" %>
+        <%= form.password_field :password, :style=>"border:1px solid #56261a;border-radius:20px;" %>
+      </div>
+      <div>
+        <%= form.label :password_confirmation, style: "display: block" %>
+        <%= form.password_field :password_confirmation , :style=>"border:1px solid #56261a;border-radius:20px;" %>
+      </div>
+
+    
+  <% if current_user && current_user.role == 'Admin' %>
+    <div>
+      <%= form.label :role, style: "display: block" %>
+      <%= form.select :role, options_for_select(['Admin', 'Trader']), prompt: 'Select a role' %>
+
+
+    </div>
+  <% end %>
+    <div>
+      <%= form.submit action_name == 'new'?'Register':'Save Changes', :class => 'btn btn-block m-2' , :style=>"background-color:#56261a;radius:20px;color:#f9eae6;" %>
+    </div>
+  <% end %>
+
+  </div>
+
+  </div>
+
+</div>

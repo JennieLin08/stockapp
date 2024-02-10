@@ -1,0 +1,24 @@
+<div id="<%= dom_id user %>">
+    <tr>
+      <td scope="row"><%= link_to user.username, user %></td>
+      <td><%= user.email_address %></td>
+      <td><%= user.full_name %></td>
+      <td> <%= user.role %></td>
+      <td><%= user.status %></td>
+      <% if action_name != 'show' %>
+      <td>
+      <% if user.status == 'Approved' %>
+        <%= link_to "Edit this user", edit_user_path(user), :class => 'm-3 btn' %></td>
+      <% else %>
+          <%= button_to "Approve this user", user, method: :post, :class => 'btn ' %></td>
+      <% end %>
+      <% end %>
+    </tr>
+
+  
+
+  <p>
+  
+</p>
+
+</div>
