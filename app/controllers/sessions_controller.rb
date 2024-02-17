@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
           redirect_to users_path, notice: 'Login successful!'
       else
         # temporary path to be edited later
-         redirect_to root_path, notice: 'Login successful!'
+         redirect_to stocks_path, notice: 'Login successful!'
       end
     else
       # flash.now[:notice] = 'Invalid username or password'
