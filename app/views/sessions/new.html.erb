@@ -1,7 +1,7 @@
 
-<div class="m-4 row text-center d-flex justify-content-center " >
+<div class="m-0 p-0 row text-center d-flex justify-content-center g-0 loginpage" >
 
-  <div style="border:1px solid #56261a;border-radius:20px;width:500px;">
+  <div class="" style="min-height:90vh;">
 
     <h1 class="col-lg-12 text-center mt-1">Login</h1>
     <div class="col-lg-12 text-center d-flex justify-content-center mb-2">
@@ -11,16 +11,16 @@
         <%= form_with(url: sessions_path, method: :post, :html => { :style => 'width:350px;margin:0px' }) do |form| %>
           <div class="form-outline mb-4">
           <%= form.label :username , :class => 'form-label',:for=>'username' %>
-          <%= form.text_field :username ,  :class => 'form-control',:id=>'username', :style=>"border:1px solid #56261a;border-radius:20px;" %>
+          <%= form.text_field :username ,  :class => 'form-control border text-light border-transparent bg-transparent',:id=>'username', :style=>"border:1px solid #56261a;border-radius:20px;" %>
           
           </div>
 
           <div class="form-outline mb-4">
           <%= form.label :password, :class => 'form-label' %>
-          <%= form.password_field :password,  :class => 'form-control', :style=>"border:1px solid #56261a;border-radius:20px;" %>
+          <%= form.password_field :password,  :class => 'form-control text-light border border-transparent bg-transparent', :style=>"border:1px solid #56261a;border-radius:20px;" %>
           </div>
           
-          <%= form.submit 'Login', :class => 'btn text-decoration-none mb-4', :style=>"background-color:#56261a;radius:20px;color:#f9eae6;" %>
+          <%= form.submit 'Login', :class => 'btn text-decoration-none mb-4', :style=>"background-color:white;radius:20px;color:black;" %>
         <% end %>
         <span>No account yet? <%=link_to "Register", signup_path, class:"text-blue-700 underline my-8" %>
         <%# button_to "Home", root_path, method: :get, :class => 'btn btn-link btn-block m-2' %>

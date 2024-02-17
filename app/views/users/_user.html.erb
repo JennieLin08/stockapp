@@ -8,9 +8,9 @@
       <% if action_name != 'show' %>
       <td>
       <% if user.status == 'Approved' %>
-        <%= link_to "Edit this user", edit_user_path(user), :class => 'm-3 btn' %></td>
+        <%= link_to "Edit this user", edit_user_path(user), :class => 'm-3 btn bg-light text-dark' %></td>
       <% else %>
-          <%= button_to "Approve this user", user, method: :post, :class => 'btn ' %></td>
+          <%= button_to "Approve this user", user, method: :post, :class => 'btn bg-light text-dark' %></td>
       <% end %>
       <% end %>
     </tr>
