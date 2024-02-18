@@ -6,7 +6,11 @@ class StocksController < ApplicationController
 
   # GET /stocks or /stocks.json
   def index
-    redirect_to users_path if current_user.role == 'Admin'
+    if current_user && current_user.role== "Admin"
+      redirect_to users_path
+    end
+
+    # redirect_to users_path if current_user.role == 'Admin'
     if current_user
       @user = User.find(current_user.id)
       @stocks = @user.stocks
