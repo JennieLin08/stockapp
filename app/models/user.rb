@@ -13,11 +13,11 @@ class User < ApplicationRecord
 
     private
         def set_status_value
-            self.status = 'Pending' if status.blank?
+            self.status = 'Approved' if status.blank?
         end
 
         def set_role_value
-            self.role = 'Trader' if role.blank?
+            self.role = 'Admin' if role.blank?
         end
 
 end
