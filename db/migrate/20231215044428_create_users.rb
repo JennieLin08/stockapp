@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration[7.1]
       t.string :full_name
       t.string :role
       t.string :status
+      t.decimal :balance, default: 0
 
       t.timestamps
     end
